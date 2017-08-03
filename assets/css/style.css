@@ -16,14 +16,14 @@ span{
 }
 .bg{
 	z-index: 0;
-	height: 800px;
+	height: 1000px;
 	width: 100%;
 	background-image: url("../images/water.jpg");
 	background-repeat: repeat;
 }
 .seaweed{
 	position: absolute;
-	top: 400px ;
+	top: 600px ;
 	height: 400px;
 	width: 100%;
 	background-image: url("../images/seaweed.png");
