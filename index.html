@@ -8,10 +8,21 @@
     </head>
     <body>
     	<div class="bg">
-    	<br>
+
+    	<div class="imgDiv">
+	    	<img id="snapper" class="imgWin imgWin1" src="assets/images/snapper.png" height="180">
+	    	<img id="saba" class="imgWin imgWin2" src="assets/images/saba.png" height="150">
+	    	<img id="flounder" class="imgWin imgWin3" src="assets/images/flounder.png" height="150">
+	    	<img id="eel" class="imgWin imgWin4" src="assets/images/eel.png" height="120">
+	    	<img id="amberjack" class="imgWin imgWin5" src="assets/images/amberjack.png" height="130">
+	    	<img class="imgTitle" src="assets/images/title.png" width="1000">
+    	</div>
     	<img class="img1" src="assets/images/fish1.png" height="200">
     	<img class="img2" src="assets/images/fish2.png" height="100">
     	<img class="img3" src="assets/images/fish3.png" height="150">
+    	<div class="seaweed">
+    		<!-- <img class="seaweed" src="assets/images/seaweed.png"> -->
+    	</div>
     	<div id = "html">
 			<p>Press any key to get started!</p>
 			<p>Wins</p>
@@ -53,7 +64,7 @@
 
 		function refreshScreen (){
 			html = 
-				"<p>Press any key to get started!</p>" + 
+				"<p class='fontTitle'>Press any key to get started!</p>" + 
 				"<p>Wins: " + user.wins + "</p>" + 
 				"<p>Current Word</p>" + 
 				"<p> <span>" + hiddenWord + "</span></p>" +
@@ -63,6 +74,15 @@
 				"<p>" + user.guessedWords + "</p>";
 					
 				document.querySelector("#html").innerHTML = html;	
+		}
+
+		function imgHidden(){
+			document.getElementById("snapper").style.visibility = "hidden";
+			document.getElementById("saba").style.visibility = "hidden";
+			document.getElementById("eel").style.visibility = "hidden";
+			document.getElementById("flounder").style.visibility = "hidden";
+			document.getElementById("amberjack").style.visibility = "hidden";
+
 		}
 
 		
@@ -90,6 +110,28 @@
 				}
 
 				if (hiddenWord === computerChoice){
+					if(hiddenWord === "mackerel"){
+						// document.getElementById("saba").style.visibility = "visible";
+						// document.getElementByClassName("imgWin").style.visibility = "visible";
+						imgHidden();
+						document.getElementById("saba").style.visibility = "visible";
+					}
+					if(hiddenWord === "snapper"){
+						imgHidden();
+						document.getElementById("snapper").style.visibility = "visible";
+					}
+					if(hiddenWord === "flounder"){
+						imgHidden();
+						document.getElementById("flounder").style.visibility = "visible";
+					}
+					if(hiddenWord === "eel"){
+						imgHidden();
+						document.getElementById("eel").style.visibility = "visible";
+					}
+					if(hiddenWord === "amberjack"){
+						imgHidden();
+						document.getElementById("amberjack").style.visibility = "visible";
+					}
 					user.wins ++;
 					user.resetGame();
 				}
